@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  redis:
+    image: elestio/redis:7.0
+
+  app:
+    image: elestio4test/cryptgeon:${SOFTWARE_VERSION_TAG}
+    depends_on:
+      - redis
+    environment:
+      SIZE_LIMIT: 4 MiB
+    ports:
+      - 172.17.0.1:5956:8000
