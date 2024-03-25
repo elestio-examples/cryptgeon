@@ -5,7 +5,7 @@ services:
     image: elestio/redis:7.0
 
   app:
-    image: cupcakearmy/cryptgeon:${SOFTWARE_VERSION_TAG}
+    image: elestio/cryptgeon:${SOFTWARE_VERSION_TAG}
     depends_on:
       - redis
     environment:
